@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+  }
+  .title-crud{
+    text-decoration: none;
+    color: #5bc0de;
+  }
+  .container,.cont_products{
+      width: 100%;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    empty-cells: hide;
+    width: 100%;
+    border: 1px solid black;
+  }
+  th,td{
+    border: 1px solid black;
+  }
+  tr:not(.tr-head):hover{
+    background: #eee;
+  }
+  
+  
+  td:hover,
+  th:not(.th-head):hover{
+    background: #ccc;
+  }
+  
+  thead tr{
+    color: white;
+    background: royalblue;
+  }
+  
+  /* thead th{
+    border: none;
+  } */
+  
+  th{
+    text-align: left;
+  }
+  td{
+    text-align: left;
+  }
+  /*************************/
+  .btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 1em;
+    font-weight:bold;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: .25em;
+    width: 100px;
+    text-decoration: none;
+  }
+  .btn_new{
+      background:#5bc0de;
+      color: #fff;
+  }
+  .btn_edit{
+      background: #f0ad4e;
+      color: #fff;
+  }
+  .btn_delete{
+      background: #d9534f;
+      color: #fff;
+  }
+  /*******************************/
+  .form-product{
+    width: 100%;
+    max-width: 500px;
+    margin: 2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0,0,0.25);
+}
+
+.title_form{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.form_item{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+}
+
+ label{
+    margin-bottom: 0.25rem;
+    order: -1;
+}
+
+ input{
+    border: 1px solid #ddd;
+    border-radius: 0.1rem;
+    padding: 00.25rem 0.5rem;
+    width: 100%;
+}
+
+ input:focus +label{
+    color: var(--color);
+}
