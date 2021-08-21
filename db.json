@@ -1,0 +1,14 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "papaya",
+      "precio": "400"
+    },
+    {
+      "id": 2,
+      "nombre": "arroz",
+      "precio": "50"
+    }
+  ]
+}
