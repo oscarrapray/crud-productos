@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom';
 
 const Header = () => {
     return ( 
-        <div class="container">
+        <div className="container">
          <Link to = "/" className = "title-crud"><h2 >Crud Productos con React</h2></Link> 
         </div>
      );

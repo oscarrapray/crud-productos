@@ -11,9 +11,9 @@ function App() {
     <Router>
       < Header />
       <Switch>
-         <Route exact path = "/" component ={Productos} />
-         <Route path = "/productos/nuevo" component ={NuevoProducto}/>
-         <Route path = "/productos/editar/:id" component ={EditarProducto} />
+         <Route exact path = "/" component={Productos} />
+         <Route path = "/productos/nuevo" component={NuevoProducto}/>
+         <Route path = "/productos/editar/:id" component={EditarProducto} />
       </Switch>
     </Router>
   );

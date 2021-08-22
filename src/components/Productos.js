@@ -1,50 +1,49 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios'
 import { Link } from 'react-router-dom';
+import Producto from './Producto'
 
 const Productos = () => { 
 
+  const [ state, setState] = useState([]);
+
+  const listProductos = async () =>{
+    try{
+      const respuesta = await axios.get('http://localhost:4000/productos');         
+      setState(respuesta.data)
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
+
+  useEffect(()=>{  
+      listProductos()
+  },[]) 
+
     return (
-      <div class="cont_products">
+      <div className="cont_products">
         <Link  to = "/productos/nuevo" className="btn btn_new">Nuevo</Link>
-      <table>
-       <thead>
-         <tr class="tr-head">
-           <th class="th-head" width="60px">Id</th>
-           <th class="th-head">Producto</th>
-           <th class="th-head" width="60px">Precio</th>
-           <th class="th-head">Acciones</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td>1</td>
-           <td>Laptop</td>
-           <td>200</td>
-           <td >
-               <button class="btn btn_edit">Editar</button>
-               <button class="btn btn_delete">Eliminar</button>
-           </td>
-         </tr>
-         <tr>
-           <td>1</td>
-           <td>Celular</td>
-           <td>100</td>
-           <td >
-               <button class="btn btn_edit">Editar</button>
-               <button class="btn btn_delete">Eliminar</button>
-           </td>
-         </tr>
-         <tr>
-           <td>1</td>
-           <td>Audifono</td>
-           <td>500</td>
-           <td >
-               <button class="btn btn_edit">Editar</button>
-               <button class="btn btn_delete">Eliminar</button>
-           </td>
-         </tr>
-       </tbody>
-     </table>
+           <table>
+           <thead>
+             <tr className="tr-head">
+               <th className="th-head">Producto</th>
+               <th className="th-head">Precio</th>
+               <th className="th-head">Acciones</th>
+             </tr>
+           </thead>
+           <tbody>
+               {
+                 state.map(producto => (
+                   <Producto
+                       key={producto.id}
+                       producto={producto}
+                   />
+               ))
+               }
+                </tbody>
+         </table>
+          
    </div>
      );
 }
