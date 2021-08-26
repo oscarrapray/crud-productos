@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import Producto from './Producto'
 
 const Productos = () => { 
@@ -21,6 +22,30 @@ const Productos = () => {
       listProductos()
   },[]) 
 
+/////////////////////////////////////////////////////
+const eliminarProducto = id => {
+
+  // preguntar al usuario
+  Swal.fire({
+      title: '¿Estas seguro?',
+      text: "Un producto que se elimina no se puede recuperar",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar!!',
+      cancelButtonText: 'Cancelar'
+  }).then((result) => {
+      if (result.value) {
+          // pasarlo al action
+          axios.delete(`http://localhost:4000/productos/${id}`)
+          .then(resp=>{
+              listProductos()
+          })
+      }
+  });
+}
+
     return (
       <div className="cont_products">
         <Link  to = "/productos/nuevo" className="btn btn_new">Nuevo</Link>
@@ -38,6 +63,7 @@ const Productos = () => {
                    <Producto
                        key={producto.id}
                        producto={producto}
+                       eliminarProducto = {eliminarProducto}
                    />
                ))
                }
