@@ -51,7 +51,7 @@ const eliminarProducto = id => {
         <Link  to = "/productos/nuevo" className="btn btn_new">Nuevo</Link>
         {state.length===0? (
         <div>
-          <h2>No hay Productosque mostrar</h2>
+          <h2>Cargando ...</h2>
         </div>
         ) : (
              <table>

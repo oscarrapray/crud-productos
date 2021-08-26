@@ -6,6 +6,7 @@
 
 body{
     font-family: sans-serif;
+    background: #eee;
   }
   .title-crud{
     text-decoration: none;
@@ -22,6 +23,7 @@ body{
     table-layout: fixed;
     empty-cells: hide;
     width: 100%;
+    background: #fff;
     border: 1px solid black;
   }
   th,td{
@@ -48,36 +50,49 @@ body{
   
   th{
     text-align: left;
+    padding: .5em;
   }
   td{
     text-align: left;
+    padding: .5em;
   }
   /*************************/
   .btn{
-    display: inline-flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
-    padding: .5em 1em;
+    padding: .5rem 1rem;
+    line-height: 1.6;
     font-weight:bold;
     cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: .25rem;
     margin: .25em;
-    width: 100px;
-    text-decoration: none;
+    text-decoration:  none;
   }
   .btn_new{
-      background:#5bc0de;
-      color: #fff;
-  }
-  .btn_edit{
-      background: #f0ad4e;
-      color: #fff;
-  }
-  .btn_delete{
-      background: #d9534f;
-      color: #fff;
-  }
+    background:#1192ee;
+    border: 1px solid #1192ee;
+    color: #fff;
+}
+.btn_new:hover{
+    background: #0e7ecd;
+}
+.btn_edit{
+    background: #2bd480;
+    border: 1px solid #2bd480;
+    color: #fff;
+}
+.btn_edit:hover{
+    background: #2ebd75;
+}
+.btn_delete{
+    background: #eb5656;
+    border: 1px solid #eb5656;
+    color: #fff;
+}
+.btn_delete:hover{
+    background: #d84646;
+}
   /*******************************/
   .form-product{
     width: 100%;
@@ -89,6 +104,7 @@ body{
   form{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
     background: white;
     padding: 1rem;
@@ -105,6 +121,7 @@ body{
     display: flex;
     flex-direction: column;
     font-size: 0.75rem;
+    width: 100%;
 }
 
  label{
@@ -114,8 +131,10 @@ body{
 
  input{
     border: 1px solid #ddd;
+    line-height: 1.6;
     border-radius: 0.1rem;
-    padding: 00.25rem 0.5rem;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
     width: 100%;
 }
 
