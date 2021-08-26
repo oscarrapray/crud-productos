@@ -49,26 +49,32 @@ const eliminarProducto = id => {
     return (
       <div className="cont_products">
         <Link  to = "/productos/nuevo" className="btn btn_new">Nuevo</Link>
-           <table>
-           <thead>
-             <tr className="tr-head">
-               <th className="th-head">Producto</th>
-               <th className="th-head">Precio</th>
-               <th className="th-head">Acciones</th>
-             </tr>
-           </thead>
-           <tbody>
-               {
-                 state.map(producto => (
-                   <Producto
-                       key={producto.id}
-                       producto={producto}
-                       eliminarProducto = {eliminarProducto}
-                   />
-               ))
-               }
-                </tbody>
-         </table>
+        {state.length===0? (
+        <div>
+          <h2>No hay Productosque mostrar</h2>
+        </div>
+        ) : (
+             <table>
+             <thead>
+               <tr className="tr-head">
+                 <th className="th-head">Producto</th>
+                 <th className="th-head">Precio</th>
+                 <th className="th-head">Acciones</th>
+               </tr>
+             </thead>
+             <tbody>
+                 {
+                   state.map(producto => (
+                     <Producto
+                         key={producto.id}
+                         producto={producto}
+                         eliminarProducto = {eliminarProducto}
+                     />
+                 ))
+                 }
+                  </tbody>
+           </table>
+        )}
           
    </div>
      );
